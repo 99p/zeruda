@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://bws3nia6b28g1"]
+
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_v7f1w"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_uohu4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lh6js"]
+albedo_color = Color(0.352941, 0.466667, 0.678431, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_bly81"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bwfht"]
+albedo_color = Color(0.807843, 0.682353, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hne6l"]
+
+[node name="enemy" type="CharacterBody3D" groups=["enemy"]]
+script = ExtResource("1_v7f1w")
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot"]
+mesh = SubResource("BoxMesh_uohu4")
+surface_material_override/0 = SubResource("StandardMaterial3D_lh6js")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.20648)
+mesh = SubResource("SphereMesh_bly81")
+skeleton = NodePath("../MeshInstance3D")
+surface_material_override/0 = SubResource("StandardMaterial3D_bwfht")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_hne6l")

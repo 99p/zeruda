@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://bat41spld7cpa"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_fav0e"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_gdytn"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_imnw1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j2yvs"]
+albedo_color = Color(1, 0.513726, 0.796078, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_t00c4"]
+top_radius = 0.0
+bottom_radius = 0.2
+height = 0.5
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_fav0e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_gdytn")
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot"]
+mesh = SubResource("SphereMesh_imnw1")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_j2yvs")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Pivot"]
+transform = Transform3D(1, 0, 0, 0, -0.027974, 0.999609, 0, -0.999609, -0.027974, 0, 0, -0.655025)
+mesh = SubResource("CylinderMesh_t00c4")

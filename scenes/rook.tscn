@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dg7wim7emx4i1"]
+
+[ext_resource type="PackedScene" uid="uid://esd34w2ta15j" path="res://assets/rook.blend" id="1_20era"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_q2kpi"]
+height = 1.0
+radius = 0.338
+
+[node name="rook" type="CharacterBody3D"]
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="rook" parent="Pivot" instance=ExtResource("1_20era")]
+transform = Transform3D(-0.5, 1.74393e-16, -4.37114e-08, 1.74393e-16, 0.5, -1.74393e-16, 4.37114e-08, -1.74393e-16, -0.5, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.500405, 0)
+shape = SubResource("CylinderShape3D_q2kpi")
