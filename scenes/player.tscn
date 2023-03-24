@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bat41spld7cpa"]
+[gd_scene load_steps=6 format=3]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_fav0e"]
+[ext_resource type="Script" path="res://scripts/player_old.gd" id="1_fav0e"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_gdytn"]
 
