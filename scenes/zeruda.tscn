@@ -1,0 +1,3189 @@
+[gd_scene load_steps=8 format=3 uid="uid://c40njl46q5iri"]
+
+[ext_resource type="Script" path="res://scripts/zeruda.gd" id="1_op161"]
+[ext_resource type="PackedScene" uid="uid://bws3nia6b28g1" path="res://scenes/enemy.tscn" id="2_m1v04"]
+[ext_resource type="PackedScene" uid="uid://dg7wim7emx4i1" path="res://scenes/rook.tscn" id="3_5bbia"]
+[ext_resource type="PackedScene" uid="uid://criy3w1cwaphp" path="res://scenes/mech.tscn" id="4_p07ka"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iw62k"]
+size = Vector3(60, 1, 30)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0bk13"]
+size = Vector3(60, 1, 30)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pcaw8"]
+albedo_color = Color(0.0588235, 0.14902, 0.0784314, 1)
+
+[node name="zeruda" type="Node"]
+script = ExtResource("1_op161")
+
+[node name="Ground" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("BoxShape3D_iw62k")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("BoxMesh_0bk13")
+surface_material_override/0 = SubResource("StandardMaterial3D_pcaw8")
+
+[node name="Ground2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.7449, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground2"]
+shape = SubResource("BoxShape3D_iw62k")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground2"]
+mesh = SubResource("BoxMesh_0bk13")
+surface_material_override/0 = SubResource("StandardMaterial3D_pcaw8")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.0570588, 0.998371, 0, -0.998371, 0.0570588, 0, 10.1192, 0.0872756)
+light_energy = 1.5
+shadow_enabled = true
+
+[node name="Enemy" parent="." instance=ExtResource("2_m1v04")]
+transform = Transform3D(-0.998712, 0, 0.0507324, 0, 1, 0, -0.0507324, 0, -0.998712, 0.181029, 1, -6.87447)
+
+[node name="Forest" type="Node3D" parent="."]
+
+[node name="Node3D" type="Node3D" parent="Forest"]
+
+[node name="rook" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, -2.1312)
+
+[node name="rook2" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, -1.1312)
+
+[node name="rook3" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, -0.1312)
+
+[node name="rook4" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 0.8688)
+
+[node name="rook5" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 1.8688)
+
+[node name="rook6" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 2.8688)
+
+[node name="rook7" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 3.8688)
+
+[node name="rook8" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 4.8688)
+
+[node name="rook9" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, -2.1312)
+
+[node name="rook10" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, -1.1312)
+
+[node name="rook11" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, -0.1312)
+
+[node name="rook12" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 0.8688)
+
+[node name="rook13" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 1.8688)
+
+[node name="rook14" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 2.8688)
+
+[node name="rook15" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 3.8688)
+
+[node name="rook16" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 4.8688)
+
+[node name="rook17" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, -2.1312)
+
+[node name="rook18" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, -1.1312)
+
+[node name="rook19" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, -0.1312)
+
+[node name="rook20" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 0.8688)
+
+[node name="rook21" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 1.8688)
+
+[node name="rook22" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 2.8688)
+
+[node name="rook23" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 3.8688)
+
+[node name="rook24" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 4.8688)
+
+[node name="rook25" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, -2.1312)
+
+[node name="rook26" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, -1.1312)
+
+[node name="rook27" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, -0.1312)
+
+[node name="rook28" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 0.8688)
+
+[node name="rook29" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 1.8688)
+
+[node name="rook30" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 2.8688)
+
+[node name="rook31" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 3.8688)
+
+[node name="rook32" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 4.8688)
+
+[node name="rook33" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, -2.1312)
+
+[node name="rook34" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, -1.1312)
+
+[node name="rook35" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, -0.1312)
+
+[node name="rook36" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 0.8688)
+
+[node name="rook37" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 1.8688)
+
+[node name="rook38" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 2.8688)
+
+[node name="rook39" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 3.8688)
+
+[node name="rook40" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 4.8688)
+
+[node name="rook41" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, -2.1312)
+
+[node name="rook42" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, -1.1312)
+
+[node name="rook43" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, -0.1312)
+
+[node name="rook44" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 0.8688)
+
+[node name="rook45" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 1.8688)
+
+[node name="rook46" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 2.8688)
+
+[node name="rook47" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 3.8688)
+
+[node name="rook48" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 4.8688)
+
+[node name="rook49" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, -2.1312)
+
+[node name="rook50" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, -1.1312)
+
+[node name="rook51" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, -0.1312)
+
+[node name="rook52" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 0.8688)
+
+[node name="rook53" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 1.8688)
+
+[node name="rook54" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 2.8688)
+
+[node name="rook55" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 3.8688)
+
+[node name="rook56" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 4.8688)
+
+[node name="rook57" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, -2.1312)
+
+[node name="rook58" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, -1.1312)
+
+[node name="rook59" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, -0.1312)
+
+[node name="rook60" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 0.8688)
+
+[node name="rook61" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 1.8688)
+
+[node name="rook62" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 2.8688)
+
+[node name="rook63" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 3.8688)
+
+[node name="rook64" parent="Forest/Node3D" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 4.8688)
+
+[node name="Node3D15" type="Node3D" parent="Forest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+
+[node name="rook" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, -2.1312)
+
+[node name="rook2" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, -1.1312)
+
+[node name="rook3" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, -0.1312)
+
+[node name="rook4" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 0.8688)
+
+[node name="rook5" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 1.8688)
+
+[node name="rook6" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 2.8688)
+
+[node name="rook7" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 3.8688)
+
+[node name="rook8" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 4.8688)
+
+[node name="rook9" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, -2.1312)
+
+[node name="rook10" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, -1.1312)
+
+[node name="rook11" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, -0.1312)
+
+[node name="rook12" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 0.8688)
+
+[node name="rook13" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 1.8688)
+
+[node name="rook14" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 2.8688)
+
+[node name="rook15" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 3.8688)
+
+[node name="rook16" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 4.8688)
+
+[node name="rook17" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, -2.1312)
+
+[node name="rook18" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, -1.1312)
+
+[node name="rook19" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, -0.1312)
+
+[node name="rook20" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 0.8688)
+
+[node name="rook21" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 1.8688)
+
+[node name="rook22" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 2.8688)
+
+[node name="rook23" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 3.8688)
+
+[node name="rook24" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 4.8688)
+
+[node name="rook25" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, -2.1312)
+
+[node name="rook26" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, -1.1312)
+
+[node name="rook27" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, -0.1312)
+
+[node name="rook28" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 0.8688)
+
+[node name="rook29" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 1.8688)
+
+[node name="rook30" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 2.8688)
+
+[node name="rook31" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 3.8688)
+
+[node name="rook32" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 4.8688)
+
+[node name="rook33" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, -2.1312)
+
+[node name="rook34" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, -1.1312)
+
+[node name="rook35" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, -0.1312)
+
+[node name="rook36" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 0.8688)
+
+[node name="rook37" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 1.8688)
+
+[node name="rook38" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 2.8688)
+
+[node name="rook39" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 3.8688)
+
+[node name="rook40" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 4.8688)
+
+[node name="rook41" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, -2.1312)
+
+[node name="rook42" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, -1.1312)
+
+[node name="rook43" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, -0.1312)
+
+[node name="rook44" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 0.8688)
+
+[node name="rook45" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 1.8688)
+
+[node name="rook46" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 2.8688)
+
+[node name="rook47" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 3.8688)
+
+[node name="rook48" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 4.8688)
+
+[node name="rook49" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, -2.1312)
+
+[node name="rook50" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, -1.1312)
+
+[node name="rook51" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, -0.1312)
+
+[node name="rook52" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 0.8688)
+
+[node name="rook53" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 1.8688)
+
+[node name="rook54" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 2.8688)
+
+[node name="rook55" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 3.8688)
+
+[node name="rook56" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 4.8688)
+
+[node name="rook57" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, -2.1312)
+
+[node name="rook58" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, -1.1312)
+
+[node name="rook59" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, -0.1312)
+
+[node name="rook60" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 0.8688)
+
+[node name="rook61" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 1.8688)
+
+[node name="rook62" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 2.8688)
+
+[node name="rook63" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 3.8688)
+
+[node name="rook64" parent="Forest/Node3D15" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 4.8688)
+
+[node name="Node3D2" type="Node3D" parent="Forest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="rook" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, -2.1312)
+
+[node name="rook2" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, -1.1312)
+
+[node name="rook3" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, -0.1312)
+
+[node name="rook4" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 0.8688)
+
+[node name="rook5" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 1.8688)
+
+[node name="rook6" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 2.8688)
+
+[node name="rook7" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 3.8688)
+
+[node name="rook8" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 4.8688)
+
+[node name="rook9" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, -2.1312)
+
+[node name="rook10" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, -1.1312)
+
+[node name="rook11" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, -0.1312)
+
+[node name="rook12" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 0.8688)
+
+[node name="rook13" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 1.8688)
+
+[node name="rook14" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 2.8688)
+
+[node name="rook15" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 3.8688)
+
+[node name="rook16" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 4.8688)
+
+[node name="rook17" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, -2.1312)
+
+[node name="rook18" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, -1.1312)
+
+[node name="rook19" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, -0.1312)
+
+[node name="rook20" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 0.8688)
+
+[node name="rook21" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 1.8688)
+
+[node name="rook22" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 2.8688)
+
+[node name="rook23" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 3.8688)
+
+[node name="rook24" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 4.8688)
+
+[node name="rook25" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, -2.1312)
+
+[node name="rook26" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, -1.1312)
+
+[node name="rook27" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, -0.1312)
+
+[node name="rook28" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 0.8688)
+
+[node name="rook29" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 1.8688)
+
+[node name="rook30" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 2.8688)
+
+[node name="rook31" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 3.8688)
+
+[node name="rook32" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 4.8688)
+
+[node name="rook33" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, -2.1312)
+
+[node name="rook34" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, -1.1312)
+
+[node name="rook35" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, -0.1312)
+
+[node name="rook36" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 0.8688)
+
+[node name="rook37" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 1.8688)
+
+[node name="rook38" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 2.8688)
+
+[node name="rook39" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 3.8688)
+
+[node name="rook40" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 4.8688)
+
+[node name="rook41" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, -2.1312)
+
+[node name="rook42" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, -1.1312)
+
+[node name="rook43" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, -0.1312)
+
+[node name="rook44" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 0.8688)
+
+[node name="rook45" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 1.8688)
+
+[node name="rook46" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 2.8688)
+
+[node name="rook47" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 3.8688)
+
+[node name="rook48" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 4.8688)
+
+[node name="rook49" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, -2.1312)
+
+[node name="rook50" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, -1.1312)
+
+[node name="rook51" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, -0.1312)
+
+[node name="rook52" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 0.8688)
+
+[node name="rook53" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 1.8688)
+
+[node name="rook54" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 2.8688)
+
+[node name="rook55" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 3.8688)
+
+[node name="rook56" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 4.8688)
+
+[node name="rook57" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, -2.1312)
+
+[node name="rook58" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, -1.1312)
+
+[node name="rook59" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, -0.1312)
+
+[node name="rook60" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 0.8688)
+
+[node name="rook61" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 1.8688)
+
+[node name="rook62" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 2.8688)
+
+[node name="rook63" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 3.8688)
+
+[node name="rook64" parent="Forest/Node3D2" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 4.8688)
+
+[node name="Node3D3" type="Node3D" parent="Forest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 8)
+
+[node name="rook" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, -2.1312)
+
+[node name="rook2" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, -1.1312)
+
+[node name="rook3" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, -0.1312)
+
+[node name="rook4" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 0.8688)
+
+[node name="rook5" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 1.8688)
+
+[node name="rook6" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 2.8688)
+
+[node name="rook7" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 3.8688)
+
+[node name="rook8" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 4.8688)
+
+[node name="rook9" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, -2.1312)
+
+[node name="rook10" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, -1.1312)
+
+[node name="rook11" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, -0.1312)
+
+[node name="rook12" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 0.8688)
+
+[node name="rook13" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 1.8688)
+
+[node name="rook14" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 2.8688)
+
+[node name="rook15" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 3.8688)
+
+[node name="rook16" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 4.8688)
+
+[node name="rook17" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, -2.1312)
+
+[node name="rook18" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, -1.1312)
+
+[node name="rook19" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, -0.1312)
+
+[node name="rook20" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 0.8688)
+
+[node name="rook21" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 1.8688)
+
+[node name="rook22" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 2.8688)
+
+[node name="rook23" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 3.8688)
+
+[node name="rook24" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 4.8688)
+
+[node name="rook25" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, -2.1312)
+
+[node name="rook26" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, -1.1312)
+
+[node name="rook27" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, -0.1312)
+
+[node name="rook28" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 0.8688)
+
+[node name="rook29" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 1.8688)
+
+[node name="rook30" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 2.8688)
+
+[node name="rook31" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 3.8688)
+
+[node name="rook32" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 4.8688)
+
+[node name="rook33" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, -2.1312)
+
+[node name="rook34" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, -1.1312)
+
+[node name="rook35" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, -0.1312)
+
+[node name="rook36" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 0.8688)
+
+[node name="rook37" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 1.8688)
+
+[node name="rook38" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 2.8688)
+
+[node name="rook39" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 3.8688)
+
+[node name="rook40" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 4.8688)
+
+[node name="rook41" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, -2.1312)
+
+[node name="rook42" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, -1.1312)
+
+[node name="rook43" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, -0.1312)
+
+[node name="rook44" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 0.8688)
+
+[node name="rook45" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 1.8688)
+
+[node name="rook46" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 2.8688)
+
+[node name="rook47" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 3.8688)
+
+[node name="rook48" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 4.8688)
+
+[node name="rook49" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, -2.1312)
+
+[node name="rook50" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, -1.1312)
+
+[node name="rook51" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, -0.1312)
+
+[node name="rook52" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 0.8688)
+
+[node name="rook53" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 1.8688)
+
+[node name="rook54" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 2.8688)
+
+[node name="rook55" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 3.8688)
+
+[node name="rook56" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 4.8688)
+
+[node name="rook57" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, -2.1312)
+
+[node name="rook58" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, -1.1312)
+
+[node name="rook59" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, -0.1312)
+
+[node name="rook60" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 0.8688)
+
+[node name="rook61" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 1.8688)
+
+[node name="rook62" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 2.8688)
+
+[node name="rook63" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 3.8688)
+
+[node name="rook64" parent="Forest/Node3D3" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 4.8688)
+
+[node name="Node3D4" type="Node3D" parent="Forest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 8)
+
+[node name="rook" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, -2.1312)
+
+[node name="rook2" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, -1.1312)
+
+[node name="rook3" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, -0.1312)
+
+[node name="rook4" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 0.8688)
+
+[node name="rook5" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 1.8688)
+
+[node name="rook6" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 2.8688)
+
+[node name="rook7" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 3.8688)
+
+[node name="rook8" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 4.8688)
+
+[node name="rook9" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, -2.1312)
+
+[node name="rook10" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, -1.1312)
+
+[node name="rook11" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, -0.1312)
+
+[node name="rook12" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 0.8688)
+
+[node name="rook13" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 1.8688)
+
+[node name="rook14" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 2.8688)
+
+[node name="rook15" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 3.8688)
+
+[node name="rook16" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 4.8688)
+
+[node name="rook17" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, -2.1312)
+
+[node name="rook18" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, -1.1312)
+
+[node name="rook19" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, -0.1312)
+
+[node name="rook20" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 0.8688)
+
+[node name="rook21" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 1.8688)
+
+[node name="rook22" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 2.8688)
+
+[node name="rook23" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 3.8688)
+
+[node name="rook24" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 4.8688)
+
+[node name="rook25" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, -2.1312)
+
+[node name="rook26" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, -1.1312)
+
+[node name="rook27" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, -0.1312)
+
+[node name="rook28" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 0.8688)
+
+[node name="rook29" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 1.8688)
+
+[node name="rook30" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 2.8688)
+
+[node name="rook31" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 3.8688)
+
+[node name="rook32" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 4.8688)
+
+[node name="rook33" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, -2.1312)
+
+[node name="rook34" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, -1.1312)
+
+[node name="rook35" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, -0.1312)
+
+[node name="rook36" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 0.8688)
+
+[node name="rook37" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 1.8688)
+
+[node name="rook38" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 2.8688)
+
+[node name="rook39" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 3.8688)
+
+[node name="rook40" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 4.8688)
+
+[node name="rook41" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, -2.1312)
+
+[node name="rook42" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, -1.1312)
+
+[node name="rook43" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, -0.1312)
+
+[node name="rook44" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 0.8688)
+
+[node name="rook45" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 1.8688)
+
+[node name="rook46" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 2.8688)
+
+[node name="rook47" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 3.8688)
+
+[node name="rook48" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 4.8688)
+
+[node name="rook49" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, -2.1312)
+
+[node name="rook50" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, -1.1312)
+
+[node name="rook51" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, -0.1312)
+
+[node name="rook52" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 0.8688)
+
+[node name="rook53" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 1.8688)
+
+[node name="rook54" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 2.8688)
+
+[node name="rook55" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 3.8688)
+
+[node name="rook56" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 4.8688)
+
+[node name="rook57" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, -2.1312)
+
+[node name="rook58" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, -1.1312)
+
+[node name="rook59" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, -0.1312)
+
+[node name="rook60" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 0.8688)
+
+[node name="rook61" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 1.8688)
+
+[node name="rook62" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 2.8688)
+
+[node name="rook63" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 3.8688)
+
+[node name="rook64" parent="Forest/Node3D4" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 4.8688)
+
+[node name="Node3D5" type="Node3D" parent="Forest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 8)
+
+[node name="rook" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, -2.1312)
+
+[node name="rook2" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, -1.1312)
+
+[node name="rook3" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, -0.1312)
+
+[node name="rook4" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 0.8688)
+
+[node name="rook5" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 1.8688)
+
+[node name="rook6" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 2.8688)
+
+[node name="rook7" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 3.8688)
+
+[node name="rook8" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 4.8688)
+
+[node name="rook9" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, -2.1312)
+
+[node name="rook10" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, -1.1312)
+
+[node name="rook11" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, -0.1312)
+
+[node name="rook12" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 0.8688)
+
+[node name="rook13" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 1.8688)
+
+[node name="rook14" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 2.8688)
+
+[node name="rook15" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 3.8688)
+
+[node name="rook16" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 4.8688)
+
+[node name="rook17" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, -2.1312)
+
+[node name="rook18" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, -1.1312)
+
+[node name="rook19" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, -0.1312)
+
+[node name="rook20" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 0.8688)
+
+[node name="rook21" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 1.8688)
+
+[node name="rook22" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 2.8688)
+
+[node name="rook23" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 3.8688)
+
+[node name="rook24" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 4.8688)
+
+[node name="rook25" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, -2.1312)
+
+[node name="rook26" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, -1.1312)
+
+[node name="rook27" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, -0.1312)
+
+[node name="rook28" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 0.8688)
+
+[node name="rook29" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 1.8688)
+
+[node name="rook30" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 2.8688)
+
+[node name="rook31" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 3.8688)
+
+[node name="rook32" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 4.8688)
+
+[node name="rook33" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, -2.1312)
+
+[node name="rook34" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, -1.1312)
+
+[node name="rook35" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, -0.1312)
+
+[node name="rook36" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 0.8688)
+
+[node name="rook37" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 1.8688)
+
+[node name="rook38" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 2.8688)
+
+[node name="rook39" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 3.8688)
+
+[node name="rook40" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 4.8688)
+
+[node name="rook41" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, -2.1312)
+
+[node name="rook42" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, -1.1312)
+
+[node name="rook43" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, -0.1312)
+
+[node name="rook44" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 0.8688)
+
+[node name="rook45" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 1.8688)
+
+[node name="rook46" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 2.8688)
+
+[node name="rook47" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 3.8688)
+
+[node name="rook48" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 4.8688)
+
+[node name="rook49" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, -2.1312)
+
+[node name="rook50" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, -1.1312)
+
+[node name="rook51" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, -0.1312)
+
+[node name="rook52" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 0.8688)
+
+[node name="rook53" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 1.8688)
+
+[node name="rook54" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 2.8688)
+
+[node name="rook55" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 3.8688)
+
+[node name="rook56" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 4.8688)
+
+[node name="rook57" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, -2.1312)
+
+[node name="rook58" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, -1.1312)
+
+[node name="rook59" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, -0.1312)
+
+[node name="rook60" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 0.8688)
+
+[node name="rook61" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 1.8688)
+
+[node name="rook62" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 2.8688)
+
+[node name="rook63" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 3.8688)
+
+[node name="rook64" parent="Forest/Node3D5" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 4.8688)
+
+[node name="Node3D6" type="Node3D" parent="Forest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 0)
+
+[node name="rook" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, -2.1312)
+
+[node name="rook2" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, -1.1312)
+
+[node name="rook3" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, -0.1312)
+
+[node name="rook4" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 0.8688)
+
+[node name="rook5" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 1.8688)
+
+[node name="rook6" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 2.8688)
+
+[node name="rook7" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 3.8688)
+
+[node name="rook8" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 4.8688)
+
+[node name="rook9" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, -2.1312)
+
+[node name="rook10" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, -1.1312)
+
+[node name="rook11" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, -0.1312)
+
+[node name="rook12" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 0.8688)
+
+[node name="rook13" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 1.8688)
+
+[node name="rook14" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 2.8688)
+
+[node name="rook15" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 3.8688)
+
+[node name="rook16" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 4.8688)
+
+[node name="rook17" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, -2.1312)
+
+[node name="rook18" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, -1.1312)
+
+[node name="rook19" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, -0.1312)
+
+[node name="rook20" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 0.8688)
+
+[node name="rook21" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 1.8688)
+
+[node name="rook22" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 2.8688)
+
+[node name="rook23" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 3.8688)
+
+[node name="rook24" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 4.8688)
+
+[node name="rook25" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, -2.1312)
+
+[node name="rook26" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, -1.1312)
+
+[node name="rook27" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, -0.1312)
+
+[node name="rook28" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 0.8688)
+
+[node name="rook29" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 1.8688)
+
+[node name="rook30" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 2.8688)
+
+[node name="rook31" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 3.8688)
+
+[node name="rook32" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 4.8688)
+
+[node name="rook33" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, -2.1312)
+
+[node name="rook34" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, -1.1312)
+
+[node name="rook35" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, -0.1312)
+
+[node name="rook36" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 0.8688)
+
+[node name="rook37" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 1.8688)
+
+[node name="rook38" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 2.8688)
+
+[node name="rook39" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 3.8688)
+
+[node name="rook40" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 4.8688)
+
+[node name="rook41" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, -2.1312)
+
+[node name="rook42" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, -1.1312)
+
+[node name="rook43" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, -0.1312)
+
+[node name="rook44" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 0.8688)
+
+[node name="rook45" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 1.8688)
+
+[node name="rook46" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 2.8688)
+
+[node name="rook47" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 3.8688)
+
+[node name="rook48" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 4.8688)
+
+[node name="rook49" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, -2.1312)
+
+[node name="rook50" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, -1.1312)
+
+[node name="rook51" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, -0.1312)
+
+[node name="rook52" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 0.8688)
+
+[node name="rook53" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 1.8688)
+
+[node name="rook54" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 2.8688)
+
+[node name="rook55" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 3.8688)
+
+[node name="rook56" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 4.8688)
+
+[node name="rook57" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, -2.1312)
+
+[node name="rook58" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, -1.1312)
+
+[node name="rook59" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, -0.1312)
+
+[node name="rook60" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 0.8688)
+
+[node name="rook61" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 1.8688)
+
+[node name="rook62" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 2.8688)
+
+[node name="rook63" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 3.8688)
+
+[node name="rook64" parent="Forest/Node3D6" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 4.8688)
+
+[node name="Node3D7" type="Node3D" parent="Forest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -8)
+
+[node name="rook" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, -2.1312)
+
+[node name="rook2" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, -1.1312)
+
+[node name="rook3" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, -0.1312)
+
+[node name="rook4" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 0.8688)
+
+[node name="rook5" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 1.8688)
+
+[node name="rook6" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 2.8688)
+
+[node name="rook7" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 3.8688)
+
+[node name="rook8" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 4.8688)
+
+[node name="rook9" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, -2.1312)
+
+[node name="rook10" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, -1.1312)
+
+[node name="rook11" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, -0.1312)
+
+[node name="rook12" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 0.8688)
+
+[node name="rook13" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 1.8688)
+
+[node name="rook14" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 2.8688)
+
+[node name="rook15" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 3.8688)
+
+[node name="rook16" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 4.8688)
+
+[node name="rook17" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, -2.1312)
+
+[node name="rook18" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, -1.1312)
+
+[node name="rook19" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, -0.1312)
+
+[node name="rook20" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 0.8688)
+
+[node name="rook21" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 1.8688)
+
+[node name="rook22" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 2.8688)
+
+[node name="rook23" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 3.8688)
+
+[node name="rook24" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 4.8688)
+
+[node name="rook25" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, -2.1312)
+
+[node name="rook26" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, -1.1312)
+
+[node name="rook27" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, -0.1312)
+
+[node name="rook28" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 0.8688)
+
+[node name="rook29" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 1.8688)
+
+[node name="rook30" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 2.8688)
+
+[node name="rook31" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 3.8688)
+
+[node name="rook32" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 4.8688)
+
+[node name="rook33" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, -2.1312)
+
+[node name="rook34" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, -1.1312)
+
+[node name="rook35" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, -0.1312)
+
+[node name="rook36" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 0.8688)
+
+[node name="rook37" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 1.8688)
+
+[node name="rook38" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 2.8688)
+
+[node name="rook39" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 3.8688)
+
+[node name="rook40" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 4.8688)
+
+[node name="rook41" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, -2.1312)
+
+[node name="rook42" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, -1.1312)
+
+[node name="rook43" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, -0.1312)
+
+[node name="rook44" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 0.8688)
+
+[node name="rook45" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 1.8688)
+
+[node name="rook46" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 2.8688)
+
+[node name="rook47" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 3.8688)
+
+[node name="rook48" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 4.8688)
+
+[node name="rook49" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, -2.1312)
+
+[node name="rook50" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, -1.1312)
+
+[node name="rook51" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, -0.1312)
+
+[node name="rook52" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 0.8688)
+
+[node name="rook53" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 1.8688)
+
+[node name="rook54" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 2.8688)
+
+[node name="rook55" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 3.8688)
+
+[node name="rook56" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 4.8688)
+
+[node name="rook57" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, -2.1312)
+
+[node name="rook58" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, -1.1312)
+
+[node name="rook59" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, -0.1312)
+
+[node name="rook60" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 0.8688)
+
+[node name="rook61" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 1.8688)
+
+[node name="rook62" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 2.8688)
+
+[node name="rook63" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 3.8688)
+
+[node name="rook64" parent="Forest/Node3D7" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 4.8688)
+
+[node name="Node3D8" type="Node3D" parent="Forest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -16)
+
+[node name="rook" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, -2.1312)
+
+[node name="rook2" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, -1.1312)
+
+[node name="rook3" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, -0.1312)
+
+[node name="rook4" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 0.8688)
+
+[node name="rook5" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 1.8688)
+
+[node name="rook65" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 1.8688)
+
+[node name="rook6" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 2.8688)
+
+[node name="rook7" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 3.8688)
+
+[node name="rook8" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 4.8688)
+
+[node name="rook9" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, -2.1312)
+
+[node name="rook10" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, -1.1312)
+
+[node name="rook11" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, -0.1312)
+
+[node name="rook12" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 0.8688)
+
+[node name="rook13" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 1.8688)
+
+[node name="rook14" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 2.8688)
+
+[node name="rook15" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 3.8688)
+
+[node name="rook16" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 4.8688)
+
+[node name="rook17" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, -2.1312)
+
+[node name="rook18" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, -1.1312)
+
+[node name="rook19" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, -0.1312)
+
+[node name="rook20" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 0.8688)
+
+[node name="rook21" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 1.8688)
+
+[node name="rook22" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 2.8688)
+
+[node name="rook23" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 3.8688)
+
+[node name="rook24" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 4.8688)
+
+[node name="rook25" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, -2.1312)
+
+[node name="rook26" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, -1.1312)
+
+[node name="rook27" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, -0.1312)
+
+[node name="rook28" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 0.8688)
+
+[node name="rook29" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 1.8688)
+
+[node name="rook30" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 2.8688)
+
+[node name="rook31" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 3.8688)
+
+[node name="rook32" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 4.8688)
+
+[node name="rook33" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, -2.1312)
+
+[node name="rook34" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, -1.1312)
+
+[node name="rook35" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, -0.1312)
+
+[node name="rook36" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 0.8688)
+
+[node name="rook37" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 1.8688)
+
+[node name="rook38" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 2.8688)
+
+[node name="rook39" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 3.8688)
+
+[node name="rook40" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 4.8688)
+
+[node name="rook41" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, -2.1312)
+
+[node name="rook42" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, -1.1312)
+
+[node name="rook43" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, -0.1312)
+
+[node name="rook44" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 0.8688)
+
+[node name="rook45" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 1.8688)
+
+[node name="rook46" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 2.8688)
+
+[node name="rook47" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 3.8688)
+
+[node name="rook48" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 4.8688)
+
+[node name="rook49" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, -2.1312)
+
+[node name="rook50" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, -1.1312)
+
+[node name="rook51" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, -0.1312)
+
+[node name="rook52" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 0.8688)
+
+[node name="rook53" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 1.8688)
+
+[node name="rook54" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 2.8688)
+
+[node name="rook55" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 3.8688)
+
+[node name="rook56" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 4.8688)
+
+[node name="rook57" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, -2.1312)
+
+[node name="rook58" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, -1.1312)
+
+[node name="rook59" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, -0.1312)
+
+[node name="rook60" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 0.8688)
+
+[node name="rook61" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 1.8688)
+
+[node name="rook62" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 2.8688)
+
+[node name="rook63" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 3.8688)
+
+[node name="rook64" parent="Forest/Node3D8" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 4.8688)
+
+[node name="Node3D13" type="Node3D" parent="Forest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, -16)
+
+[node name="rook" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, -2.1312)
+
+[node name="rook2" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, -1.1312)
+
+[node name="rook3" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, -0.1312)
+
+[node name="rook4" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 0.8688)
+
+[node name="rook5" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 1.8688)
+
+[node name="rook65" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 1.8688)
+
+[node name="rook6" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 2.8688)
+
+[node name="rook7" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 3.8688)
+
+[node name="rook8" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 4.8688)
+
+[node name="rook9" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, -2.1312)
+
+[node name="rook10" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, -1.1312)
+
+[node name="rook11" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, -0.1312)
+
+[node name="rook12" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 0.8688)
+
+[node name="rook13" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 1.8688)
+
+[node name="rook14" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 2.8688)
+
+[node name="rook15" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 3.8688)
+
+[node name="rook16" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 4.8688)
+
+[node name="rook17" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, -2.1312)
+
+[node name="rook18" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, -1.1312)
+
+[node name="rook19" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, -0.1312)
+
+[node name="rook20" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 0.8688)
+
+[node name="rook21" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 1.8688)
+
+[node name="rook22" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 2.8688)
+
+[node name="rook23" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 3.8688)
+
+[node name="rook24" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 4.8688)
+
+[node name="rook25" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, -2.1312)
+
+[node name="rook26" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, -1.1312)
+
+[node name="rook27" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, -0.1312)
+
+[node name="rook28" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 0.8688)
+
+[node name="rook29" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 1.8688)
+
+[node name="rook30" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 2.8688)
+
+[node name="rook31" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 3.8688)
+
+[node name="rook32" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 4.8688)
+
+[node name="rook33" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, -2.1312)
+
+[node name="rook34" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, -1.1312)
+
+[node name="rook35" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, -0.1312)
+
+[node name="rook36" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 0.8688)
+
+[node name="rook37" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 1.8688)
+
+[node name="rook38" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 2.8688)
+
+[node name="rook39" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 3.8688)
+
+[node name="rook40" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 4.8688)
+
+[node name="rook41" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, -2.1312)
+
+[node name="rook42" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, -1.1312)
+
+[node name="rook43" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, -0.1312)
+
+[node name="rook44" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 0.8688)
+
+[node name="rook45" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 1.8688)
+
+[node name="rook46" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 2.8688)
+
+[node name="rook47" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 3.8688)
+
+[node name="rook48" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 4.8688)
+
+[node name="rook49" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, -2.1312)
+
+[node name="rook50" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, -1.1312)
+
+[node name="rook51" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, -0.1312)
+
+[node name="rook52" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 0.8688)
+
+[node name="rook53" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 1.8688)
+
+[node name="rook54" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 2.8688)
+
+[node name="rook55" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 3.8688)
+
+[node name="rook56" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 4.8688)
+
+[node name="rook57" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, -2.1312)
+
+[node name="rook58" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, -1.1312)
+
+[node name="rook59" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, -0.1312)
+
+[node name="rook60" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 0.8688)
+
+[node name="rook61" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 1.8688)
+
+[node name="rook62" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 2.8688)
+
+[node name="rook63" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 3.8688)
+
+[node name="rook64" parent="Forest/Node3D13" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 4.8688)
+
+[node name="Node3D14" type="Node3D" parent="Forest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, -8)
+
+[node name="rook" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, -2.1312)
+
+[node name="rook2" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, -1.1312)
+
+[node name="rook3" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, -0.1312)
+
+[node name="rook4" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 0.8688)
+
+[node name="rook5" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 1.8688)
+
+[node name="rook65" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 1.8688)
+
+[node name="rook6" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 2.8688)
+
+[node name="rook7" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 3.8688)
+
+[node name="rook8" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 4.8688)
+
+[node name="rook9" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, -2.1312)
+
+[node name="rook10" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, -1.1312)
+
+[node name="rook11" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, -0.1312)
+
+[node name="rook12" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 0.8688)
+
+[node name="rook13" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 1.8688)
+
+[node name="rook14" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 2.8688)
+
+[node name="rook15" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 3.8688)
+
+[node name="rook16" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 4.8688)
+
+[node name="rook17" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, -2.1312)
+
+[node name="rook18" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, -1.1312)
+
+[node name="rook19" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, -0.1312)
+
+[node name="rook20" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 0.8688)
+
+[node name="rook21" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 1.8688)
+
+[node name="rook22" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 2.8688)
+
+[node name="rook23" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 3.8688)
+
+[node name="rook24" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 4.8688)
+
+[node name="rook25" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, -2.1312)
+
+[node name="rook26" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, -1.1312)
+
+[node name="rook27" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, -0.1312)
+
+[node name="rook28" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 0.8688)
+
+[node name="rook29" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 1.8688)
+
+[node name="rook30" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 2.8688)
+
+[node name="rook31" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 3.8688)
+
+[node name="rook32" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 4.8688)
+
+[node name="rook33" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, -2.1312)
+
+[node name="rook34" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, -1.1312)
+
+[node name="rook35" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, -0.1312)
+
+[node name="rook36" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 0.8688)
+
+[node name="rook37" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 1.8688)
+
+[node name="rook38" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 2.8688)
+
+[node name="rook39" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 3.8688)
+
+[node name="rook40" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 4.8688)
+
+[node name="rook41" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, -2.1312)
+
+[node name="rook42" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, -1.1312)
+
+[node name="rook43" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, -0.1312)
+
+[node name="rook44" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 0.8688)
+
+[node name="rook45" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 1.8688)
+
+[node name="rook46" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 2.8688)
+
+[node name="rook47" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 3.8688)
+
+[node name="rook48" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 4.8688)
+
+[node name="rook49" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, -2.1312)
+
+[node name="rook50" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, -1.1312)
+
+[node name="rook51" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, -0.1312)
+
+[node name="rook52" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 0.8688)
+
+[node name="rook53" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 1.8688)
+
+[node name="rook54" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 2.8688)
+
+[node name="rook55" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 3.8688)
+
+[node name="rook56" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 4.8688)
+
+[node name="rook57" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, -2.1312)
+
+[node name="rook58" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, -1.1312)
+
+[node name="rook59" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, -0.1312)
+
+[node name="rook60" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 0.8688)
+
+[node name="rook61" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 1.8688)
+
+[node name="rook62" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 2.8688)
+
+[node name="rook63" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 3.8688)
+
+[node name="rook64" parent="Forest/Node3D14" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 4.8688)
+
+[node name="Node3D9" type="Node3D" parent="Forest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -16)
+
+[node name="rook" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, -2.1312)
+
+[node name="rook2" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, -1.1312)
+
+[node name="rook3" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, -0.1312)
+
+[node name="rook4" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 0.8688)
+
+[node name="rook5" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 1.8688)
+
+[node name="rook6" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 2.8688)
+
+[node name="rook7" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 3.8688)
+
+[node name="rook8" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 4.8688)
+
+[node name="rook9" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, -2.1312)
+
+[node name="rook10" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, -1.1312)
+
+[node name="rook11" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, -0.1312)
+
+[node name="rook12" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 0.8688)
+
+[node name="rook13" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 1.8688)
+
+[node name="rook14" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 2.8688)
+
+[node name="rook15" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 3.8688)
+
+[node name="rook16" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 4.8688)
+
+[node name="rook17" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, -2.1312)
+
+[node name="rook18" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, -1.1312)
+
+[node name="rook19" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, -0.1312)
+
+[node name="rook20" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 0.8688)
+
+[node name="rook21" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 1.8688)
+
+[node name="rook22" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 2.8688)
+
+[node name="rook23" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 3.8688)
+
+[node name="rook24" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 4.8688)
+
+[node name="rook25" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, -2.1312)
+
+[node name="rook26" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, -1.1312)
+
+[node name="rook27" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, -0.1312)
+
+[node name="rook28" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 0.8688)
+
+[node name="rook29" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 1.8688)
+
+[node name="rook30" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 2.8688)
+
+[node name="rook31" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 3.8688)
+
+[node name="rook32" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 4.8688)
+
+[node name="rook33" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, -2.1312)
+
+[node name="rook34" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, -1.1312)
+
+[node name="rook35" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, -0.1312)
+
+[node name="rook36" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 0.8688)
+
+[node name="rook37" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 1.8688)
+
+[node name="rook38" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 2.8688)
+
+[node name="rook39" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 3.8688)
+
+[node name="rook40" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 4.8688)
+
+[node name="rook41" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, -2.1312)
+
+[node name="rook42" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, -1.1312)
+
+[node name="rook43" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, -0.1312)
+
+[node name="rook44" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 0.8688)
+
+[node name="rook45" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 1.8688)
+
+[node name="rook46" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 2.8688)
+
+[node name="rook47" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 3.8688)
+
+[node name="rook48" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 4.8688)
+
+[node name="rook49" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, -2.1312)
+
+[node name="rook50" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, -1.1312)
+
+[node name="rook51" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, -0.1312)
+
+[node name="rook52" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 0.8688)
+
+[node name="rook53" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 1.8688)
+
+[node name="rook54" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 2.8688)
+
+[node name="rook55" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 3.8688)
+
+[node name="rook56" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 4.8688)
+
+[node name="rook57" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, -2.1312)
+
+[node name="rook58" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, -1.1312)
+
+[node name="rook59" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, -0.1312)
+
+[node name="rook60" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 0.8688)
+
+[node name="rook61" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 1.8688)
+
+[node name="rook62" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 2.8688)
+
+[node name="rook63" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 3.8688)
+
+[node name="rook64" parent="Forest/Node3D9" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 4.8688)
+
+[node name="Node3D10" type="Node3D" parent="Forest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -16)
+
+[node name="rook" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, -2.1312)
+
+[node name="rook2" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, -1.1312)
+
+[node name="rook3" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, -0.1312)
+
+[node name="rook4" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 0.8688)
+
+[node name="rook5" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 1.8688)
+
+[node name="rook6" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 2.8688)
+
+[node name="rook7" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 3.8688)
+
+[node name="rook8" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 4.8688)
+
+[node name="rook9" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, -2.1312)
+
+[node name="rook10" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, -1.1312)
+
+[node name="rook11" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, -0.1312)
+
+[node name="rook12" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 0.8688)
+
+[node name="rook13" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 1.8688)
+
+[node name="rook14" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 2.8688)
+
+[node name="rook15" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 3.8688)
+
+[node name="rook16" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 4.8688)
+
+[node name="rook17" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, -2.1312)
+
+[node name="rook18" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, -1.1312)
+
+[node name="rook19" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, -0.1312)
+
+[node name="rook20" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 0.8688)
+
+[node name="rook21" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 1.8688)
+
+[node name="rook22" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 2.8688)
+
+[node name="rook23" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 3.8688)
+
+[node name="rook24" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 4.8688)
+
+[node name="rook25" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, -2.1312)
+
+[node name="rook26" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, -1.1312)
+
+[node name="rook27" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, -0.1312)
+
+[node name="rook28" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 0.8688)
+
+[node name="rook29" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 1.8688)
+
+[node name="rook30" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 2.8688)
+
+[node name="rook31" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 3.8688)
+
+[node name="rook32" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 4.8688)
+
+[node name="rook33" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, -2.1312)
+
+[node name="rook34" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, -1.1312)
+
+[node name="rook35" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, -0.1312)
+
+[node name="rook36" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 0.8688)
+
+[node name="rook37" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 1.8688)
+
+[node name="rook38" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 2.8688)
+
+[node name="rook39" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 3.8688)
+
+[node name="rook40" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 4.8688)
+
+[node name="rook41" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, -2.1312)
+
+[node name="rook42" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, -1.1312)
+
+[node name="rook43" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, -0.1312)
+
+[node name="rook44" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 0.8688)
+
+[node name="rook45" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 1.8688)
+
+[node name="rook46" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 2.8688)
+
+[node name="rook47" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 3.8688)
+
+[node name="rook48" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 4.8688)
+
+[node name="rook49" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, -2.1312)
+
+[node name="rook50" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, -1.1312)
+
+[node name="rook51" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, -0.1312)
+
+[node name="rook52" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 0.8688)
+
+[node name="rook53" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 1.8688)
+
+[node name="rook54" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 2.8688)
+
+[node name="rook55" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 3.8688)
+
+[node name="rook56" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 4.8688)
+
+[node name="rook57" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, -2.1312)
+
+[node name="rook58" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, -1.1312)
+
+[node name="rook59" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, -0.1312)
+
+[node name="rook60" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 0.8688)
+
+[node name="rook61" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 1.8688)
+
+[node name="rook62" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 2.8688)
+
+[node name="rook63" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 3.8688)
+
+[node name="rook64" parent="Forest/Node3D10" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 4.8688)
+
+[node name="Node3D11" type="Node3D" parent="Forest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -16)
+
+[node name="rook" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, -2.1312)
+
+[node name="rook2" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, -1.1312)
+
+[node name="rook3" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, -0.1312)
+
+[node name="rook4" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 0.8688)
+
+[node name="rook5" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 1.8688)
+
+[node name="rook6" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 2.8688)
+
+[node name="rook7" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 3.8688)
+
+[node name="rook8" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 4.8688)
+
+[node name="rook9" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, -2.1312)
+
+[node name="rook10" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, -1.1312)
+
+[node name="rook11" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, -0.1312)
+
+[node name="rook12" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 0.8688)
+
+[node name="rook13" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 1.8688)
+
+[node name="rook14" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 2.8688)
+
+[node name="rook15" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 3.8688)
+
+[node name="rook16" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 4.8688)
+
+[node name="rook17" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, -2.1312)
+
+[node name="rook18" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, -1.1312)
+
+[node name="rook19" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, -0.1312)
+
+[node name="rook20" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 0.8688)
+
+[node name="rook21" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 1.8688)
+
+[node name="rook22" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 2.8688)
+
+[node name="rook23" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 3.8688)
+
+[node name="rook24" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 4.8688)
+
+[node name="rook25" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, -2.1312)
+
+[node name="rook26" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, -1.1312)
+
+[node name="rook27" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, -0.1312)
+
+[node name="rook28" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 0.8688)
+
+[node name="rook29" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 1.8688)
+
+[node name="rook30" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 2.8688)
+
+[node name="rook31" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 3.8688)
+
+[node name="rook32" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 4.8688)
+
+[node name="rook33" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, -2.1312)
+
+[node name="rook34" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, -1.1312)
+
+[node name="rook35" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, -0.1312)
+
+[node name="rook36" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 0.8688)
+
+[node name="rook37" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 1.8688)
+
+[node name="rook38" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 2.8688)
+
+[node name="rook39" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 3.8688)
+
+[node name="rook40" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 4.8688)
+
+[node name="rook41" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, -2.1312)
+
+[node name="rook42" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, -1.1312)
+
+[node name="rook43" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, -0.1312)
+
+[node name="rook44" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 0.8688)
+
+[node name="rook45" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 1.8688)
+
+[node name="rook46" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 2.8688)
+
+[node name="rook47" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 3.8688)
+
+[node name="rook48" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 4.8688)
+
+[node name="rook49" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, -2.1312)
+
+[node name="rook50" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, -1.1312)
+
+[node name="rook51" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, -0.1312)
+
+[node name="rook52" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 0.8688)
+
+[node name="rook53" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 1.8688)
+
+[node name="rook54" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 2.8688)
+
+[node name="rook55" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 3.8688)
+
+[node name="rook56" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 4.8688)
+
+[node name="rook57" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, -2.1312)
+
+[node name="rook58" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, -1.1312)
+
+[node name="rook59" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, -0.1312)
+
+[node name="rook60" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 0.8688)
+
+[node name="rook61" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 1.8688)
+
+[node name="rook62" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 2.8688)
+
+[node name="rook63" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 3.8688)
+
+[node name="rook64" parent="Forest/Node3D11" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 4.8688)
+
+[node name="Node3D12" type="Node3D" parent="Forest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -16)
+
+[node name="rook" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, -2.1312)
+
+[node name="rook2" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, -1.1312)
+
+[node name="rook3" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, -0.131201)
+
+[node name="rook4" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 0.8688)
+
+[node name="rook5" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 1.8688)
+
+[node name="rook6" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 2.8688)
+
+[node name="rook7" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 3.8688)
+
+[node name="rook8" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 4.8688)
+
+[node name="rook9" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, -2.1312)
+
+[node name="rook10" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, -1.1312)
+
+[node name="rook11" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, -0.131201)
+
+[node name="rook12" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 0.8688)
+
+[node name="rook13" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 1.8688)
+
+[node name="rook14" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 2.8688)
+
+[node name="rook15" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 3.8688)
+
+[node name="rook16" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 4.8688)
+
+[node name="rook17" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, -2.1312)
+
+[node name="rook18" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, -1.1312)
+
+[node name="rook19" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, -0.131201)
+
+[node name="rook20" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 0.8688)
+
+[node name="rook21" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 1.8688)
+
+[node name="rook22" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 2.8688)
+
+[node name="rook23" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 3.8688)
+
+[node name="rook24" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 4.8688)
+
+[node name="rook25" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, -2.1312)
+
+[node name="rook26" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, -1.1312)
+
+[node name="rook27" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, -0.131201)
+
+[node name="rook28" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 0.8688)
+
+[node name="rook29" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 1.8688)
+
+[node name="rook30" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 2.8688)
+
+[node name="rook31" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 3.8688)
+
+[node name="rook32" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 4.8688)
+
+[node name="rook33" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, -2.1312)
+
+[node name="rook34" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, -1.1312)
+
+[node name="rook35" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, -0.131201)
+
+[node name="rook36" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 0.8688)
+
+[node name="rook37" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 1.8688)
+
+[node name="rook38" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 2.8688)
+
+[node name="rook39" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 3.8688)
+
+[node name="rook40" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 4.8688)
+
+[node name="rook41" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, -2.1312)
+
+[node name="rook42" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, -1.1312)
+
+[node name="rook43" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, -0.131201)
+
+[node name="rook44" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 0.8688)
+
+[node name="rook45" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 1.8688)
+
+[node name="rook46" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 2.8688)
+
+[node name="rook47" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 3.8688)
+
+[node name="rook48" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 4.8688)
+
+[node name="rook49" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, -2.1312)
+
+[node name="rook50" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, -1.1312)
+
+[node name="rook51" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, -0.131201)
+
+[node name="rook52" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 0.8688)
+
+[node name="rook53" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 1.8688)
+
+[node name="rook54" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 2.8688)
+
+[node name="rook55" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 3.8688)
+
+[node name="rook56" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 4.8688)
+
+[node name="rook57" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, -2.1312)
+
+[node name="rook58" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, -1.1312)
+
+[node name="rook59" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, -0.131201)
+
+[node name="rook60" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 0.8688)
+
+[node name="rook61" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 1.8688)
+
+[node name="rook62" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 2.8688)
+
+[node name="rook63" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 3.8688)
+
+[node name="rook64" parent="Forest/Node3D12" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 4.8688)
+
+[node name="Node3D16" type="Node3D" parent="Forest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -16)
+
+[node name="rook" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, -2.1312)
+
+[node name="rook2" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, -1.1312)
+
+[node name="rook3" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, -0.131201)
+
+[node name="rook4" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 0.8688)
+
+[node name="rook5" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 1.8688)
+
+[node name="rook6" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 2.8688)
+
+[node name="rook7" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 3.8688)
+
+[node name="rook8" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.236, 0.5, 4.8688)
+
+[node name="rook9" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, -2.1312)
+
+[node name="rook10" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, -1.1312)
+
+[node name="rook11" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, -0.131201)
+
+[node name="rook12" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 0.8688)
+
+[node name="rook13" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 1.8688)
+
+[node name="rook14" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 2.8688)
+
+[node name="rook15" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 3.8688)
+
+[node name="rook16" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.236, 0.5, 4.8688)
+
+[node name="rook17" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, -2.1312)
+
+[node name="rook18" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, -1.1312)
+
+[node name="rook19" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, -0.131201)
+
+[node name="rook20" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 0.8688)
+
+[node name="rook21" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 1.8688)
+
+[node name="rook22" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 2.8688)
+
+[node name="rook23" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 3.8688)
+
+[node name="rook24" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.236, 0.5, 4.8688)
+
+[node name="rook25" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, -2.1312)
+
+[node name="rook26" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, -1.1312)
+
+[node name="rook27" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, -0.131201)
+
+[node name="rook28" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 0.8688)
+
+[node name="rook29" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 1.8688)
+
+[node name="rook30" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 2.8688)
+
+[node name="rook31" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 3.8688)
+
+[node name="rook32" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.236, 0.5, 4.8688)
+
+[node name="rook33" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, -2.1312)
+
+[node name="rook34" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, -1.1312)
+
+[node name="rook35" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, -0.131201)
+
+[node name="rook36" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 0.8688)
+
+[node name="rook37" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 1.8688)
+
+[node name="rook38" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 2.8688)
+
+[node name="rook39" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 3.8688)
+
+[node name="rook40" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.236, 0.5, 4.8688)
+
+[node name="rook41" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, -2.1312)
+
+[node name="rook42" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, -1.1312)
+
+[node name="rook43" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, -0.131201)
+
+[node name="rook44" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 0.8688)
+
+[node name="rook45" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 1.8688)
+
+[node name="rook46" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 2.8688)
+
+[node name="rook47" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 3.8688)
+
+[node name="rook48" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.236, 0.5, 4.8688)
+
+[node name="rook49" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, -2.1312)
+
+[node name="rook50" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, -1.1312)
+
+[node name="rook51" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, -0.131201)
+
+[node name="rook52" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 0.8688)
+
+[node name="rook53" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 1.8688)
+
+[node name="rook54" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 2.8688)
+
+[node name="rook55" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 3.8688)
+
+[node name="rook56" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.236, 0.5, 4.8688)
+
+[node name="rook57" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, -2.1312)
+
+[node name="rook58" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, -1.1312)
+
+[node name="rook59" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, -0.131201)
+
+[node name="rook60" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 0.8688)
+
+[node name="rook61" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 1.8688)
+
+[node name="rook62" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 2.8688)
+
+[node name="rook63" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 3.8688)
+
+[node name="rook64" parent="Forest/Node3D16" instance=ExtResource("3_5bbia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.236, 0.5, 4.8688)
+
+[node name="Mech" parent="." instance=ExtResource("4_p07ka")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.90413, 0.5, -3.33793)
+
+[node name="StartPos" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.206222, 0)
+
+[node name="CameraPivot" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.794711, 0.606987, 0, -0.606987, 0.794711, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 4.93879e-09, 0, 1.09049e-08, 1, 0, -0.227106, 25.7721)
+projection = 1
+size = 10.0

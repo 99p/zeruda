@@ -1,0 +1,85 @@
+[gd_scene load_steps=10 format=3 uid="uid://dqdhg31l8teus"]
+
+[ext_resource type="PackedScene" uid="uid://bb1vbfgquum0s" path="res://assets/block2.glb" id="2_ieoh0"]
+[ext_resource type="Script" path="res://scripts/camera.gd" id="2_qxko0"]
+[ext_resource type="PackedScene" uid="uid://t0lkvelq0nnu" path="res://assets/block3.glb" id="3_2rehc"]
+[ext_resource type="PackedScene" uid="uid://cdiqbr48gktj7" path="res://assets/block1.glb" id="3_4jrc0"]
+[ext_resource type="PackedScene" uid="uid://dklhw16uh1rlo" path="res://scenes/seaman.tscn" id="6_jvkgy"]
+[ext_resource type="Texture2D" uid="uid://p1bngsxe78g7" path="res://icon.svg" id="7_jvlq4"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vwj33"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_7mxat"]
+sky_material = SubResource("ProceduralSkyMaterial_vwj33")
+
+[sub_resource type="Environment" id="Environment_or3wk"]
+background_mode = 2
+sky = SubResource("Sky_7mxat")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="megamen" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_or3wk")
+
+[node name="Environment" type="Node" parent="."]
+
+[node name="block1" parent="Environment" instance=ExtResource("3_4jrc0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.7395, -7.50553, -0.183189)
+
+[node name="block2" parent="Environment" instance=ExtResource("2_ieoh0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.22652, -4.3831, -0.376851)
+
+[node name="block3" parent="Environment" instance=ExtResource("3_2rehc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.43081, -1.11392, 0.266451)
+
+[node name="block4" parent="Environment" instance=ExtResource("3_2rehc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.05767, -1.11392, 0.266451)
+
+[node name="block5" parent="Environment" instance=ExtResource("3_2rehc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.121741, -1.11392, 0.266451)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.915861, 0.401084, 0.0181726, -0.0991274, 0.182029, 0.978284, 0.389066, -0.897774, 0.206472, 0, 4.52307, 0.937919)
+shadow_enabled = true
+directional_shadow_mode = 1
+directional_shadow_split_1 = 0.02
+directional_shadow_max_distance = 5.0
+
+[node name="CameraPivot" type="Node3D" parent="." node_paths=PackedStringArray("player")]
+transform = Transform3D(0.707107, -0.183013, 0.683013, 3.36902e-16, 0.965925, 0.258819, -0.707107, -0.183013, 0.683013, 10, 2.08165e-12, 2.08165e-12)
+script = ExtResource("2_qxko0")
+player = NodePath("../seaman")
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+transform = Transform3D(1, -8.10309e-10, 5.34939e-08, 6.25807e-10, 1, 6.81358e-08, -7.54689e-09, -1.62832e-07, 1, 1.479, -0.501834, 10)
+projection = 1
+size = 14.0
+
+[node name="seaman" parent="." instance=ExtResource("6_jvkgy")]
+
+[node name="Left" type="TouchScreenButton" parent="."]
+position = Vector2(82, 1911)
+scale = Vector2(2.20312, 2.20312)
+texture_normal = ExtResource("7_jvlq4")
+passby_press = true
+action = "move_left"
+visibility_mode = 1
+
+[node name="Right" type="TouchScreenButton" parent="."]
+position = Vector2(407, 1911)
+scale = Vector2(2.20312, 2.20312)
+texture_normal = ExtResource("7_jvlq4")
+passby_press = true
+action = "move_right"
+visibility_mode = 1
+
+[node name="Jump" type="TouchScreenButton" parent="."]
+position = Vector2(720, 1911)
+scale = Vector2(2.20312, 2.20312)
+texture_normal = ExtResource("7_jvlq4")
+action = "jump"
+visibility_mode = 1

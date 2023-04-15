@@ -1,0 +1,36 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://n2it1fh5v08e"
+path.etc2="res://.godot/imported/ninja-5fbe5925bf00d6213daad8c9109f2f5d_Ch24_1001_Normal.png-c99eb143c86478618b8261f24a0dca27.etc2.ctex"
+metadata={
+"imported_formats": ["etc2_astc"],
+"vram_texture": true
+}
+generator_parameters={}
+
+[deps]
+
+source_file="res://assets/ninja-5fbe5925bf00d6213daad8c9109f2f5d_Ch24_1001_Normal.png"
+dest_files=["res://.godot/imported/ninja-5fbe5925bf00d6213daad8c9109f2f5d_Ch24_1001_Normal.png-c99eb143c86478618b8261f24a0dca27.etc2.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://assets/ninja-5fbe5925bf00d6213daad8c9109f2f5d_Ch24_1001_Normal.png"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
